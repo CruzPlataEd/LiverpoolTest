@@ -20,8 +20,8 @@ data class StatusResponse(
 
 data class InfoResponse(
     @SerializedName("sortOptions")
-    val sortOptions : SortOptions,
+    val sortOptions : List<SortOptions>,
 
     @SerializedName("records")
-    val products : Products
+    val products : List<Products>
 )

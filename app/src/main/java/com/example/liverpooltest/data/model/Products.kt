@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Products(
     @SerializedName("productId")
-    val productId : Long,
+    val productId : String,
 
     @SerializedName("productDisplayName")
     val productName : String,
@@ -15,6 +15,9 @@ data class Products(
 
     @SerializedName("promoPrice")
     val promoPrice : Double,
+
+    @SerializedName("brand")
+    val brand : String,
 
     @SerializedName("smImage")
     val smallImage : String,
@@ -26,7 +29,7 @@ data class Products(
     val xlImage : String,
 
     @SerializedName("variantsColor")
-    val colors : ColorsOptions
+    val colors : List<ColorsOptions>
 )
 
 data class ColorsOptions(
@@ -34,5 +37,5 @@ data class ColorsOptions(
     val colorName : String,
 
     @SerializedName("colorHex")
-    val colorHex : Color
+    val colorHex : String
 )

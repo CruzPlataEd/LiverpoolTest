@@ -6,6 +6,6 @@ data class SortOptions(
     @SerializedName("sortBy")
     val sortUrl : String,
 
-    @SerializedName("lavel")
+    @SerializedName("label")
     val sortText : String
 )

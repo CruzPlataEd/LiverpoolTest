@@ -3,6 +3,7 @@ plugins {
     id("com.android.application")
     id("com.google.dagger.hilt.android")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -32,16 +33,34 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
 
     buildFeatures{
+        dataBinding = true
         viewBinding = true
     }
 }
 
 dependencies {
+
+    //Picasso
+    implementation("com.squareup.picasso:picasso:2.71828")
+
+    //Kotlin
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+
+    //Feature module Support
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.7.7")
+
+    //Testing Navigation
+    androidTestImplementation("androidx.navigation:navigation-testing:2.7.7")
+
+    //Jetpack Compose Integration
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 
     //Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -49,8 +68,8 @@ dependencies {
     implementation("com.squareup.picasso:picasso:2.71828")
 
     //Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 
     //ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")

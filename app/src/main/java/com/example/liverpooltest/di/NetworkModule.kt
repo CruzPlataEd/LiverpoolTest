@@ -17,7 +17,7 @@ object NetworkModule {
     @Provides
     fun provideRetrofit():Retrofit{
         return Retrofit.Builder()
-            .baseUrl("https://shoppapp.liverpool.com.mx/appclienteservices/services/v7/plp/sf")
+            .baseUrl("https://shoppapp.liverpool.com.mx/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

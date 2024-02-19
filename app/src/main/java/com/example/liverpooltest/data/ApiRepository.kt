@@ -7,7 +7,8 @@ import javax.inject.Inject
 class ApiRepository @Inject constructor(private val api : ApiService, private val apiProvider: ApiProvider) {
     suspend fun getInfoApi(page : Int, search : String, sortOption : String): ApiResponse {
         val response = api.getInfo(page,search, sortOption)
-        apiProvider.info = response
+        apiProvider.products = response.information?.products ?: emptyList()
+        apiProvider.sortOptions = response.information?.sortOptions ?: emptyList()
         return response
     }
 }

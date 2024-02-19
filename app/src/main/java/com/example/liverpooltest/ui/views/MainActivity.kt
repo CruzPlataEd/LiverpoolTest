@@ -1,20 +1,20 @@
-package com.example.liverpooltest.ui.activities
+package com.example.liverpooltest.ui.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.example.liverpooltest.R
+import com.example.liverpooltest.databinding.ActivityMainBinding
 import com.example.liverpooltest.ui.viewmodel.ProductsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val productsViewModel : ProductsViewModel by viewModels()
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
